@@ -33,7 +33,7 @@ jobs:
       - name: check-missing-teardown
         run: .github/workflows/scripts/teardown-check.sh
       - name: actionlint
-        uses: raven-actions/actionlint@01fce4f43a270a612932cb1c64d40505a029f821 # v2.0.0
+        uses: raven-actions/actionlint@963d4779ef039e217e5d0e6fd73ce9ab7764e493 # v2.1.0
 
   zizmor:
     runs-on: ubuntu-latest
