@@ -34,7 +34,7 @@ jobs:
           sudo apt install -y capnproto libcapnp-dev
           cd ${{ env.CRATE_BASE_DIR }}
           cargo package --features="wasm"
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: concrete-keygen
           path: ${{ env.CRATE_BASE_DIR }}/target/package/*.crate

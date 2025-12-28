@@ -165,7 +165,7 @@ jobs:
 
             deactivate
       - name: Upload wheel
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: ${{ format('{0}-wheel-{1}-linux-x86', matrix.hw, matrix.python-version) }}
           path: frontends/concrete-python/dist/*manylinux*.whl
@@ -196,7 +196,7 @@ jobs:
       - name: Upload binary libraries
         # Note: That arbitrary if to not build in every python version
         if: ${{ matrix.python-version == '3.10' }}
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: ${{ format('{0}-binaries-linux-x86_64', matrix.hw) }}
           path: ${{ github.workspace }}/build/lib/libConcrete*.so
@@ -237,7 +237,7 @@ jobs:
           CONCRETE_WHEEL="${WHEEL_DIR}/*.whl" .github/workflows/scripts/make_apidocs.sh
       - name: Upload docs.patch if failure
         if: ${{ failure() }}
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: docs-artifacts
           path: |
@@ -320,7 +320,7 @@ jobs:
 
           deactivate
       - name: Upload wheel
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: ${{ format('cpu-wheel-{0}-{1}', matrix.python-version, matrix.runs-on) }}
           path: frontends/concrete-python/dist/*macos*.whl
@@ -335,14 +335,14 @@ jobs:
       - name: Upload binary libraries mac2
         # Note: That arbitrary if to not build in every python version
         if: ${{ matrix.python-version == '3.10' && matrix.runs-on == 'aws-mac2-metal' }}
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: cpu-binaries-macosx_arm64
           path: compilers/concrete-compiler/compiler/build/lib/libConcrete*.dylib
           retention-days: 3
       - name: Upload binary libraries mac1
         if: ${{ matrix.python-version == '3.10' && matrix.runs-on == 'aws-mac1-metal' }}
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: cpu-binaries-macosx_x86_64
           path: compilers/concrete-compiler/compiler/build/lib/libConcrete*.dylib
