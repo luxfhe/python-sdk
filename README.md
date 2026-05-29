@@ -12,7 +12,7 @@
 **This SDK uses Lux's independent FHE implementation:**
 
 - ✅ Python bindings to `github.com/luxfi/tfhe` (our Go TFHE)
-- ✅ NO Zama Concrete, concrete-ml, or tfhe-rs dependencies
+- ✅ NO Torus, concrete-ml, or lux-fhe dependencies
 - ✅ Protected by Lux Industries patent portfolio
 
 ---
